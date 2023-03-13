@@ -12,4 +12,5 @@ arr.splice(2, 0, 'Wed');
 arr.splice(4, 0, 'Fri'); 
 // thêm phần tử vào cuối mảng
 arr.push('Sun');  
+// xuất mảng
 console.log('Mảng sau khi đã được thêm và sắp xếp: ' + arr);

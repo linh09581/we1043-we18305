@@ -8,6 +8,7 @@ let c1=parseInt(c);
 // tính delta
 let delta=b*b-4*a1*c1;
 var x1,x2;
+// Tìm nghiệm của phương trình
 if (delta < 0)
 {
 document.write(" Phương trình vô nghiệm ");
