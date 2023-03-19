@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function tinhtb(tb) {
+        document.writeln("Xét học lực bằng switch case");
+        switch (tb) {
+          case (10, 9):
+            document.writeln("Giỏi");
+            break;
+          case (8, 7):
+            document.writeln("Khá");
+            break;
+          case (6, 5):
+            document.writeln("Trung Bình");
+            break;
+          default:
+            document.writeln("Yếu");
+        }
+      }
+      function tinhtb2(tb) {
+        document.writeln("Xét học lực bằng if else");
+        if (tb >= 9) {
+          document.writeln("Giỏi");
+        } else if (tb >= 7) {
+          document.writeln("Khá");
+        } else if (tb >= 5) {
+          document.writeln("Trung Bình");
+        } else {
+          document.writeln("Yếu");
+        }
+      }
+      // nhập điểm từ 0 đến 10
+      do {
+        var toan = prompt(" mời nhập điểm toán (0-10):");
+        var toan1 = parseFloat(toan);
+      } while (toan1 < 0 || toan1 > 10);
+      do {
+        var ly = prompt(" mời nhập điểm lý (0-10):");
+        var ly1 = parseFloat(ly);
+      } while (ly1 < 0 || ly1 > 10);
+      do {
+        var hoa = prompt(" mời nhập điểm hóa (0-10):");
+        var hoa1 = parseFloat(hoa);
+      } while (hoa1 < 0 || hoa1 > 10);
+      do {
+        var sinh = prompt(" mời nhập điểm sinh (0-10):");
+        var sinh1 = parseFloat(toan);
+      } while (sinh1 < 0 || sinh1 > 10);
+
+      // tính trung bình
+      let tb = (toan1 + ly1 + hoa1 + sinh1) / 4;
+      tb = parseInt(tb);
+      document.writeln("Điểm trung bình: ", tb);
+      document.writeln(
+        "0. Thoát chương trình \n\
+        1. xét điểm bằng switch case\n\
+      2. Xét điểm bằng if else"
+      );
+      var a1 = 0;
+      do {
+        var a = prompt(" chọn chương trình 1.switch case 2.if else 0.Thoát:");
+        var a1 = parseInt(a);
+        switch (a1) {
+          case 1:
+            tinhtb(tb);
+            break;
+          case 2:
+            tinhtb2(tb);
+            break;
+          default:
+            console.log(" Thoát chương trình ");
+            break;
+        }
+      } while (a1 != 0);
+    </script>
+  </body>
+</html>
