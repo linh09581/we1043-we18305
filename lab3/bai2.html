@@ -1,39 +1,154 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<table class="calculator" >
-  <tr>
-    <td colspan="3"> <input class="display-box" type="text" id="result" disabled /> </td>
-    <td> <input type="button" value="C" onclick="clearScreen()" id="btn" /> </td>
-  </tr>
-  <tr>
-    <td> <input type="button" value="1" onclick="display('1')" /> </td>
-    <td> <input type="button" value="2" onclick="display('2')" /> </td>
-    <td> <input type="button" value="3" onclick="display('3')" /> </td>
-    <td> <input type="button" value="/" onclick="display('/')" /> </td>
-  </tr>
-  <tr>
-    <td> <input type="button" value="4" onclick="display('4')" /> </td>
-    <td> <input type="button" value="5" onclick="display('5')" /> </td>
-    <td> <input type="button" value="6" onclick="display('6')" /> </td>
-    <td> <input type="button" value="-" onclick="display('-')" /> </td>
-  </tr>
-  <tr>
-    <td> <input type="button" value="7" onclick="display('7')" /> </td>
-    <td> <input type="button" value="8" onclick="display('8')" /> </td>
-    <td> <input type="button" value="9" onclick="display('9')" /> </td>
-    <td> <input type="button" value="+" onclick="display('+')" /> </td>
-  </tr>
-  <tr>
-    <td> <input type="button" value="." onclick="display('.')" /> </td>
-    <td> <input type="button" value="0" onclick="display('0')" /> </td>
-    <td> <input type="button" value="=" onclick="calculate()" id="btn" /> </td>
-    <td> <input type="button" value="*" onclick="display('*')" /> </td>
-  </tr>
-</table>
-<script type="text/javascript" src="script.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tạo máy tính đơn giản bằng javascript</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .calculator {
+        width: 400px;
+        margin: 10px auto;
+      }
+      .calculator__keys {
+        width: 100%;
+
+        /* other necessary CSS */
+      }
+      div button {
+        width: 23%;
+        height: 30px;
+        margin-top: 5px;
+        display: inline-block;
+      }
+      div .key--equal {
+        height: 135px;
+        float: right;
+        margin-right: 20px;
+      }
+      div button[data-action="clear"] {
+      }
+      .calculator__display {
+        width: 95%;
+        border: 1px solid black;
+        padding: 5px 7px;
+        text-align: right;
+        border-radius: 4px;
+      }
+      .is-depressed {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="calculator">
+      <div class="calculator__display">0</div>
+      <div class="calculator__keys">
+        <button class="key--operator" data-action="add">+</button>
+        <button class="key--operator" data-action="subtract">-</button>
+        <button class="key--operator" data-action="multiply">&times;</button>
+        <button class="key--operator" data-action="divide">÷</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="key--equal" data-action="calculate">=</button>
+        <button>5</button>
+        <button>6</button>
+        <button>4</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>0</button>
+        <button data-action="decimal">.</button>
+        <button data-action="clear">AC</button>
+      </div>
+    </div>
+
+    <script>
+      const calculator = document.querySelector(".calculator");
+      const keys = calculator.querySelector(".calculator__keys");
+      const display = document.querySelector(".calculator__display");
+
+      keys.addEventListener("click", (e) => {
+        if (e.target.matches("button")) {
+          // Do something
+          const key = e.target;
+          const action = key.dataset.action;
+          const keyContent = key.textContent;
+          const displayedNum = display.textContent;
+
+          Array.from(key.parentNode.children).forEach((k) =>
+            k.classList.remove("is-depressed")
+          );
+
+          if (!action) {
+            console.log("number key!");
+            if (
+              displayedNum === "0" ||
+              calculator.dataset.previousKeyType === "operator"
+            ) {
+              display.textContent = keyContent;
+            } else {
+              display.textContent = displayedNum + keyContent;
+            }
+            calculator.dataset.previousKeyType = "number";
+          }
+
+          if (
+            action === "add" ||
+            action === "subtract" ||
+            action === "multiply" ||
+            action === "divide"
+          ) {
+            console.log("operator key!");
+            key.classList.add("is-depressed");
+            calculator.dataset.previousKeyType = "operator";
+            calculator.dataset.firstValue = displayedNum;
+            calculator.dataset.operator = action;
+          }
+
+          if (action === "clear") {
+            console.log("clear key!");
+            display.textContent = "0";
+            calculator.dataset.previousKeyType = "clear";
+          }
+
+          if (action === "calculate") {
+            console.log("equal key!");
+            const firstValue = calculator.dataset.firstValue;
+            const operator = calculator.dataset.operator;
+            const secondValue = displayedNum;
+
+            if (firstValue != undefined && operator != undefined) {
+              display.textContent = calculate(
+                firstValue,
+                operator,
+                secondValue
+              );
+              calculator.dataset.previousKeyType = "calculate";
+            }
+          }
+        }
+      });
+
+      function calculate(firstNum, operator, secondNum) {
+        if (operator === "add") {
+          return parseFloat(firstNum) + parseFloat(secondNum);
+        }
+        if (operator === "subtract") {
+          return parseFloat(firstNum) - parseFloat(secondNum);
+        }
+        if (operator === "multiply") {
+          return parseFloat(firstNum) * parseFloat(secondNum);
+        }
+        if (operator === "divide") {
+          return parseFloat(firstNum) / parseFloat(secondNum);
+        }
+      }
+    </script>
+  </body>
+</html>
