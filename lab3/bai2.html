@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Tạo máy tính đơn giản bằng javascript</title>
+    <title>Tạo máy tính bằng javascript</title>
     <style>
       * {
         box-sizing: border-box;
@@ -75,7 +75,6 @@
 
       keys.addEventListener("click", (e) => {
         if (e.target.matches("button")) {
-          // Do something
           const key = e.target;
           const action = key.dataset.action;
           const keyContent = key.textContent;
