@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        margin: 0;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        background-color: antiquewhite;
+        padding: 20px;
+      }
+      .title {
+        text-align: center;
+      }
+      .wrapper label {
+        margin-bottom: 5px;
+        margin-top: 20px;
+      }
+      .btnrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        margin-top: 10px;
+      }
+      .btn {
+        padding: 3px 15px 3px 15px;
+        background-color: red;
+        color: white;
+        border: 0px;
+        box-shadow: 3px 3px 3px rgb(171, 30, 30);
+        border-radius: 5px;
+      }
+      .btn:hover {
+        background-color: rgb(190, 1, 1);
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 20% 40% 20% 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h4 class="title">TODO LIST</h4>
+      <label for="">Task Name:</label>
+      <input
+        type="text"
+        name="task-name"
+        id="task-name"
+        placeholder="Enter task's name"
+      />
+      <label for="">Description</label>
+      <textarea
+        name="task-description"
+        id="task-description"
+        cols="30"
+        rows="10"
+        placeholder="Enter the task's description"
+      ></textarea>
+      <div class="btnrow">
+        <button id="btnAdd" class="btn">Add</button>
+      </div>
+
+      <h5>Task list</h5>
+      <section id="task-list">
+        <div class="row">
+          <div class="name">Name</div>
+          <div class="description">Description</div>
+          <div class="del">Del</div>
+          <div class="edit">Edit</div>
+        </div>
+      </section>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
