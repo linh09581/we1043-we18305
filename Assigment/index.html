@@ -95,7 +95,7 @@
         </div>
       </section>
       <!--End slider section-->
-      
+
       <!-- why section -->
       <section class="why_section">
         <div class="container">
@@ -104,17 +104,32 @@
           </div>
           <div class="three_box">
             <div class="box">
-              <img src="./assets/img/free.png" alt="" width="70px" height="70px">
+              <img
+                src="./assets/img/free.png"
+                alt=""
+                width="70px"
+                height="70px"
+              />
               <h3>Free Shiping</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
             <div class="box">
-              <img src="./assets/img/shipped.png" alt="" width="70px" height="70px">
+              <img
+                src="./assets/img/shipped.png"
+                alt=""
+                width="70px"
+                height="70px"
+              />
               <h3>Fast Delivery</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
             <div class="box">
-              <img src="./assets/img/best.png" alt="" width="70px" height="70px">
+              <img
+                src="./assets/img/best.png"
+                alt=""
+                width="70px"
+                height="70px"
+              />
               <h3>Best Quality</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
@@ -122,8 +137,66 @@
         </div>
       </section>
       <!--End why section-->
+      <!-- arrival section -->
+      <section class="arrival_section">
+        <div class="container">
+           <div class="box1">
+              <div class="arrival_bg_box">
+                 <img src="./assets/img/Blue Minimalist Fashion Sale Facebook Cover.png" alt="" width="100%">
+              </div>
+           </div>
+        </div>
+     </section>
+     <!-- end arrival section -->
+     
       <!--Product section-->
-      
+      <section>
+        <div class="product">
+          <div class="product-heading">
+            <h1>OUR PRODUCTS</h1>
+          </div>
+          <div class="product-box">
+            <div class="box">
+              <div class="img">
+              <img
+                src="./assets/img/portrait-young-japanese-woman-with-jacket.jpg"
+                alt=""
+                width="240px"
+                height="220px"
+              />
+            </div>
+            <div class="buynow">
+              <button name="buynow" id="buynow">Buy now</button>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img">
+            <img
+              src="./assets/img/joyful-young-brunette-with-fluffy-hair-red-lips-trendy-dress-black-jacket-belt-waist-standing-profile-sunny-street-smiling-against-light-building-wall.jpg"
+              alt=""
+              width="240px"
+              height="220px"
+            />
+          </div>
+          <div class="buynow">
+            <button name="buynow">Buy now</button>
+          </div>
+        </div>
+            <div class="box">
+              <div class="img">
+              <img
+                src="./assets/img/fashionable-charming-girl-checkered-dress-laughing-red-wall-photo-female-model-wearing-heart-shaped-glasses-wicker-bag.jpg"
+                alt=""
+                width="240px"
+                height="220px"
+              />
+            </div>
+            <div class="buynow">
+              <button name="buynow">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </section>
       <!--About section (video)-->
       <section>
         <div class="about" id="about">
@@ -201,15 +274,16 @@
                 <p>Subscribe by our newsletter and get update protidin.</p>
               </div>
               <div class="form_sub">
-                <form>
+                <form name="form1" action="#">
                   <fieldset>
                     <div class="field">
                       <input
-                        type="email"
+                        type="text"
                         placeholder="Enter Your Mail"
-                        name="email"
+                        name="text1"
                       />
-                      <input type="submit" value="Subscribe" />
+                      <input type="submit" value="Subscribe" name="validate"
+                      onclick="ValidateEmail(document.form1.text1)"/>
                     </div>
                   </fieldset>
                 </form>

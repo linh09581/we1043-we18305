@@ -91,3 +91,33 @@ function muteVolume() {
     player.muted = true;
   }
 }
+function ValidateEmail(input) {
+
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+  if (input.value.match(validRegex)) {
+
+    alert("Valid email address!");
+
+    document.form1.text1.focus();
+
+    return true;
+
+  } else {
+
+    alert("Invalid email address!");
+
+    document.form1.text1.focus();
+
+    return false;
+
+  }
+
+}
+var btn=document.getElementById("buynow");
+btn.addEventListener("mouseenter", function( event ) {   
+  event.target.style.color = "black";
+}, false);
+btn.addEventListener("mouseleave", function( event ) {   
+  event.target.style.color = "";
+}, false);
