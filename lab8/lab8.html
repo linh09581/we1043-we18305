@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        h1{
+            color: rgb(98, 98, 209);
+        }
+        button{
+            margin-top: 10px;
+            margin-left: 18px;
+            background-color: rgb(98, 98, 209);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 8px 8px 8px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Video Player</h1>
+      <div class="video">
+        <video
+          id="myplayer"
+          src="./videoplayback.mp4"
+          width="640"
+          height="360"
+        ></video>
+      </div>
+      <div class="controls">
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="stopVideo()">Stop</button>
+        <button onclick="replayVideo()">Replay</button>
+        <button onclick="increaseVolume()">Volume (+)</button>
+        <button onclick="decreaseVolume()">Volume (-)</button>
+        <button onclick="muteVolume()">Mute/Unmute</button>
+      </div>
+    </div>
+    <script>
+      var player = document.getElementById("myplayer");
+      function playPause() {
+        if (player.paused) {
+          player.play();
+        } else {
+          player.pause();
+        }
+      }
+      function stopVideo() {
+        player.pause();
+        if (player.currentTime) {
+          player.currentTime = 0;
+        }
+      }
+      function replayVideo() {
+        player.currentTime = 0;
+        player.play();
+      }
+      function increaseVolume() {
+        if (player.volume < 1)
+          player.volume = parseFloat(player.volume + 0.1).toFixed(1);
+      }
+      function decreaseVolume() {
+        if (player.volume > 0)
+          player.volume = parseFloat(player.volume - 0.1).toFixed(0);
+      }
+      function muteVolume() {
+        if (player.muted) {
+          player.muted = false;
+        } else {
+          player.muted = true;
+        }
+      }
+    </script>
+  </body>
+</html>

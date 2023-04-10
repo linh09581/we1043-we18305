@@ -1,108 +1,249 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 /*header*/
-.navbar{
-    margin: 46px auto;
-    width: 80%;
+.navbar {
+  margin: 46px auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar .navbar_nav {
+  display: flex;
+}
+.navbar .navbar_nav .nav-item {
+  list-style: none;
+  margin-left: 50px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 12px;
+}
+.navbar .navbar_nav .nav-item a {
+  text-decoration: none;
+  color: black;
+}
+.navbar .navbar_nav .nav-item .dropdown-menu {
+  display: none;
+}
+.slider_section .slider-box img {
+  width: 100%;
+}
+.about h1{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 30px;
+    color: red;
+}
+.about .video{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    margin-right: 100px;
+    margin-left: 80px;
 }
-.navbar .navbar_nav{
+.about .para{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    width: 320px;
 }
-.navbar .navbar_nav .nav-item{
-    list-style: none;
-    margin-left: 50px;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 700;
-    margin-top: 12px;
+.about .para h2{
+    color: red;
 }
-.navbar .navbar_nav .nav-item a{
-    text-decoration: none;
-    color: black;
+.about .controls{
+    margin-left: 150px;
 }
-.navbar .navbar_nav .nav-item .dropdown-menu{
-    display: none;
+.about .controls button{
+    margin-left: 15px;
+    background-color: white;
+    padding: 2px 2px 2px 2px;
+    border-radius: 4px;
+    color: rgb(77, 74, 74);
+    border-color: rgb(111, 96, 96);
 }
-.slider_section .slider-box img{
-    width: 100%;
+.why_section .heading_container h2 {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  color: rgb(235, 73, 73);
 }
-.why_section .heading_container h2{
-    text-align: center;
-    font-weight: 700;
-    font-size: 2rem;
+.why_section .three_box {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-around;
 }
-.why_section .three_box{
-    display: flex;
-    margin-top: 10px;
+.why_section .three_box .box {
+  width: 26%;
+  background-color: #f6c6d4;
+  color: rgb(57, 2, 2);
+  height: 200px;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  text-align: center;
 }
-.why_section .three_box .box{
-    width: 30%;
-    background-color: #002c3e;
-    margin-left: 28px;
-    color: white;
-    height: 200px;
-    border-radius: 5px;
+.why_section .three_box .box h3 {
+  text-align: center;
 }
-.why_section .three_box .box h3{
-    text-align: center;
+.footer_container .four_box {
+  margin-top: 50px;
+  display: flex;
+  background-color: rgba(243, 239, 239, 0.966);
+  font-weight: lighter;
+  color: rgba(0, 0, 0, 0.601);
 }
-.footer_container .four_box{
-    margin-top: 50px;
-    display: flex;
-    background-color: rgba(243, 239, 239, 0.966);
-    font-weight: lighter;
-    color:rgba(0, 0, 0, 0.601)
+.footer_container .four_box h3 {
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
-.footer_container .four_box h3{
-    margin-bottom: 10px;
-    text-transform: uppercase;
+.footer_container .four_box .footer_box1 {
+  width: 30%;
+  margin-left: 25px;
+  padding: 20px 10px;
+  line-height: 30px;
 }
-.footer_container .four_box .footer_box1{
-    width: 30%;
-    margin-left: 25px;
-    padding: 20px 10px;
-    line-height: 30px;
+.footer_container .four_box .footer_box {
+  padding: 20px 10px;
+  width: 18%;
+  margin-left: 25px;
+  line-height: 25px;
 }
-.footer_container .four_box .footer_box{
-    padding: 20px 10px;
-    width: 18%;
-    margin-left: 25px;
-    line-height: 25px;
+.footer_container .four_box .footer_box ul {
+  list-style: none;
 }
-.footer_container .four_box .footer_box ul{
-    list-style: none;
+.footer_container .four_box .footer_box4 {
+  width: 30%;
+  margin-left: 25px;
+  padding: 20px 10px;
 }
-.footer_container .four_box .footer_box4{
-    width: 30%;
-    margin-left: 25px;
-    padding: 20px 10px;
+.form_sub input {
+  height: 48px;
 }
-.form_sub input{
-    height: 48px;
-}
-.form_sub input[type="submit"]{
-    background-color: red;
-    width: 45%;
-    border: white;
-    color: white;
-    font-weight: bold;
+.form_sub input[type="submit"] {
+  background-color: red;
+  width: 45%;
+  border: white;
+  color: white;
+  font-weight: bold;
 }
 fieldset {
-    margin-top: 10px;
-    border: white;
+  margin-top: 10px;
+  border: white;
 }
-.cpy{
-    text-align: center;
-    background-color: #002c3e;
-    color: white;
-    height: 35px;
-    line-height: 35px;
-    font-weight: bold;
+.cpy {
+  text-align: center;
+  background-color: #002c3e;
+  color: white;
+  height: 35px;
+  line-height: 35px;
+  font-weight: bold;
+}
+.slideshow-container {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #f5f0f0;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#demo {
+  text-shadow: 1px 1px rgb(242, 230, 230);
+  float: right;
+  font-size: 30px;
+  margin-top: 0px;
+  font-weight: 550;
+  color: rgb(112, 102, 102);
+  width: 250px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
 }

@@ -29,9 +29,9 @@
                   <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages">Pages</a>
+                  <a href="#about">Pages</a>
                   <ul class="dropdown-menu">
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="testimonial.html">Testimonial</a></li>
                   </ul>
                 </li>
@@ -50,21 +50,52 @@
         </div>
       </header>
       <!--End header section-->
+      <!--Countdown clock-->
+      <div class="countdown">
+        <p id="demo"></p>
+      </div>
+      <!--End countdown clock-->
       <!--Slider section-->
       <section class="slider_section">
-        <div class="mySlides fade">
-          <img src="assets/img/slider-bg.jpg" style="width: 100%" />
-        </div>
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img
+              src="./assets/img/coleccion-de-zara-the-romantics.1.jpg"
+              style="width: 100%"
+            />
+            <div class="text"></div>
+          </div>
 
-        <div class="mySlides fade">
-          <img src="" style="width: 100%" />
-        </div>
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img
+              src="./assets/img/colecion-de-zara-romantics.2.jpg"
+              style="width: 100%"
+            />
+            <div class="text"></div>
+          </div>
 
-        <div class="mySlides fade">
-          <img src="" style="width: 100%" />
+          <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="./assets/img/slider-bg.jpg" style="width: 100%" />
+            <div class="text"></div>
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <!-- The dots/circles -->
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
         </div>
       </section>
       <!--End slider section-->
+      
       <!-- why section -->
       <section class="why_section">
         <div class="container">
@@ -73,14 +104,17 @@
           </div>
           <div class="three_box">
             <div class="box">
+              <img src="./assets/img/free.png" alt="" width="70px" height="70px">
               <h3>Free Shiping</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
             <div class="box">
+              <img src="./assets/img/shipped.png" alt="" width="70px" height="70px">
               <h3>Fast Delivery</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
             <div class="box">
+              <img src="./assets/img/best.png" alt="" width="70px" height="70px">
               <h3>Best Quality</h3>
               <p>variations of passages of Lorem Ipsum available</p>
             </div>
@@ -88,6 +122,38 @@
         </div>
       </section>
       <!--End why section-->
+      <!--Product section-->
+      
+      <!--About section (video)-->
+      <section>
+        <div class="about" id="about">
+          <h1>ABOUT US</h1>
+          <div class="video">
+            <video
+              id="myplayer"
+              src="./assets/video/eCommerce Fashion Vertical Video Product Page & Social Media Content Creation.mp4"
+              width="640"
+              height="330"
+            ></video>
+            <div class="para">
+              <h2>Famms E-commerce Apps</h2>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum.
+            </div>
+          </div>
+          <div class="controls">
+            <button onclick="playPause()">Play/Pause</button>
+            <button onclick="stopVideo()">Stop</button>
+            <button onclick="replayVideo()">Replay</button>
+            <button onclick="increaseVolume()">Volume (+)</button>
+            <button onclick="decreaseVolume()">Volume (-)</button>
+            <button onclick="muteVolume()">Mute/Unmute</button>
+          </div>
+        </div>
+      </section>
+      <!--End about section-->
       <!--Footer start-->
       <footer>
         <div class="footer_container">
@@ -156,5 +222,6 @@
         <p>© 2023 All Rights Reserved</p>
       </div>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>

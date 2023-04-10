@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      onmouseover="bigImg(this)"
+      onmouseout="normalImg(this)"
+      border="0"
+      src="Thuy-Si.1.jpg"
+      alt="Smiley"
+      width="300"
+      height="200"
+    />
+
+    <script>
+      function bigImg(x) {
+        x.style.height = "300px";
+        x.style.width = "400px";
+        x.style.border="5px solid blue";
+      }
+
+      function normalImg(x) {
+        x.style.height = "200px";
+        x.style.width = "300px";
+        x.style.border="none";
+      }
+    </script>
+  </body>
+</html>
