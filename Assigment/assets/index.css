@@ -113,10 +113,21 @@
   width: 25%;
   text-align: center;
 }
+.img{
+  border: 2px solid white;
+  width: 244px;
+  border-radius: 16px;
+}
+.price{
+  visibility: hidden;
+  color: rgb(225, 99, 99);
+  font-weight: bold;
+}
 .box .img img{
   border-radius: 16px;
 }
 .box button{
+  margin-top: 10px;
   background-color: red;
   color: white;
   font-size: 20px;
@@ -169,6 +180,14 @@
 fieldset {
   margin-top: 10px;
   border: white;
+}
+.geolocation button{
+  width: 100px;
+  border: white;
+  height: 30px;
+  background-color: rgb(234, 18, 18);
+  color: white;
+  font-weight: bold;
 }
 .cpy {
   text-align: center;

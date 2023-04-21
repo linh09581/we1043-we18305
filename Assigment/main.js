@@ -25,6 +25,7 @@ var x = setInterval(function () {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+// SlideShow
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -58,7 +59,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 //function video player
-var player=document.getElementById("myplayer")
+var player = document.getElementById("myplayer");
 function playPause() {
   if (player.paused) {
     player.play();
@@ -91,33 +92,70 @@ function muteVolume() {
     player.muted = true;
   }
 }
+// add event listener for buttons
+const btn = document.querySelectorAll(".buybtn");
+for (let i = 0; i < btn.length; i++) {
+  btn[i].addEventListener(
+    "mouseenter",
+    function (event) {
+      event.target.style.color = "black";
+    },
+    false
+  );
+  btn[i].addEventListener(
+    "mouseleave",
+    function (event) {
+      event.target.style.color = "";
+    },
+    false
+  );
+}
+// add event Listener for  img
+const img = document.querySelectorAll(".img");
+for (let i = 0; i < img.length; i++) {
+  img[i].addEventListener("mouseenter",function (event) {
+      event.target.style.borderColor = "red";
+      img[i].lastElementChild.style.visibility = "visible";  
+    }
+  );
+  img[i].addEventListener(
+    "mouseleave",
+    function (event) {
+      event.target.style.borderColor = "white";
+      img[i].lastElementChild.style.visibility = "hidden";  
+    }
+  );
+}
+// Validate email
 function ValidateEmail(input) {
-
-  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   if (input.value.match(validRegex)) {
-
     alert("Valid email address!");
 
     document.form1.text1.focus();
 
     return true;
-
   } else {
-
     alert("Invalid email address!");
 
     document.form1.text1.focus();
 
     return false;
-
   }
-
 }
-var btn=document.getElementById("buynow");
-btn.addEventListener("mouseenter", function( event ) {   
-  event.target.style.color = "black";
-}, false);
-btn.addEventListener("mouseleave", function( event ) {   
-  event.target.style.color = "";
-}, false);
+// get geolocation
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    console.log( "Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+  console.log(position.coords.latitude);
+  console.log(position.coords.longitude);
+}
